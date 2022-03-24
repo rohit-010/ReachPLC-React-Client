@@ -5,10 +5,14 @@ import "./App.css";
 
 function App() {
   const [reload, setReload] = useState(false);
+
+  const reloadHandler = () => {
+    setReload(true);
+  };
   return (
     <div className="App">
       <FetchContent />
-      <AddContent />
+      <AddContent onAdd={reloadHandler} />
     </div>
   );
 }
